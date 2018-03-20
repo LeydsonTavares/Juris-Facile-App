@@ -1,6 +1,6 @@
 {
   "name": "JurisFacile-app",
-  "app_id": "",
+  "app_id": "4f2e0a81",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

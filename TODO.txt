@@ -1,0 +1,10 @@
+Fazer sempre que realizar alterações no app.
+
+git add . //adiciona todas as mudanças realizadas no app
+
+git commit -m “commitando” //commita as mudanças
+
+git push –set-upstream origin master //sobe as mudanças no github
+
+git push ionic master //sobe as mudanças no Ionic Pro
+
