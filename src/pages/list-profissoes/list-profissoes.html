@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profissões</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      {{item.title}}
+    </button>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+   Profissões><b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
