@@ -8,3 +8,18 @@ git push –set-upstream origin master //sobe as mudanças no github
 
 git push ionic master //sobe as mudanças no Ionic Pro
 
+git add .
+
+
+Tudo o que você precisa fazer para enviar uma nova versão para Testadores é:
+
+git add -p 
+git commit -m "Minhas novas mudanças" 
+git push iônico * mestre * // mestre é qualquer ramo que você gostaria de empurrar
+
+
+Backgroud:
+
+#004366 azul escuro
+
+
