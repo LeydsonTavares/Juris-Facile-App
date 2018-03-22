@@ -1,13 +1,15 @@
 <ion-header no-border>
   <ion-toolbar color="dark">
-    <img src="/assets/imgs/icon.png" width="40px" height="40px" icon-only/>
-    <ion-searchbar autocomplete="on" animated="true" autocorrect="on" placeholder="Profissões" (ionInput)="getItems($event)"> -->
-    </ion-searchbar> 
-    <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon name="more"></ion-icon>
-      </button>
-    </ion-buttons>
+    <ion-segment>
+      <img src="/assets/imgs/icon.png" width="40px" height="40px"/>
+      <ion-searchbar autocomplete="on" animated="true" autocorrect="on" placeholder="Pesquisar..." (ionInput)="getItems($event)">
+      </ion-searchbar>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
