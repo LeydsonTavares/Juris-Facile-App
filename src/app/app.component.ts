@@ -11,19 +11,20 @@ import { timer } from 'rxjs/observable/timer';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage: any = ListProfissoesPage;
-  showSplash = true ; // <- mostrar animação
-  
+  // showSplash = true; // <- mostrar animação
+
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
   }
-
+  
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
+      // timer(4000).subscribe(() => this.showSplash = false)
 
-      timer(3000).subscribe(() => this.showSplash = false)
     });
   }
 
