@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-toolbar color="dark">
     <ion-segment>
-      <img src="/assets/imgs/icon.png" width="40px" height="40px"/>
+      <img src="assets/imgs/icon.png" width="40px" height="40px"/>
       <ion-searchbar autocomplete="on" animated="true" autocorrect="on" placeholder="Pesquisar..." (ionInput)="getItems($event)">
       </ion-searchbar>
       <ion-buttons end>
@@ -15,14 +15,11 @@
 
 
 <ion-content>
-  <div *ngIf="selectedItem" padding>Profissões>
-    <b>{{selectedItem}}</b>
-  </div>
   <ion-list padding>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)" class="item-md">
-      {{item}}
+    <button ion-item *ngFor="let profissao of listProfissoes" (click)="itemTapped($event, profissao)" class="item-md">
+      {{profissao.titulo}}
       <ion-avatar item-start>
-        <img src="/assets/imgs/icon.png">
+        <img src="assets/imgs/icon.png">
       </ion-avatar>
       <ion-icon md="md-arrow-forward" item-end></ion-icon>
     </button>

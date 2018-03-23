@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ListTemasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Tema } from './../../model/tema';
+import { ListTermosPage } from './../list-termos/list-termos';
 
 @IonicPage()
 @Component({
@@ -15,11 +10,36 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ListTemasPage {
 
+  selectedItem: any;
+  listTemas: Tema[];
+  pathPrevious: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.selectedItem = navParams.get('profissao');
+    this.initializeItems();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListTemasPage');
+  initializeItems(){
+    this.listTemas = this.selectedItem.listTemas;
+    this.pathPrevious = this.selectedItem.titulo;
+
+  }
+
+  itemTapped(event, tema) {
+
+    this.navCtrl.push(ListTermosPage, {
+      tema: tema
+    });
+  }
+
+  getItems(ev: any) {
+    this.initializeItems();
+    let val = ev.target.value;
+    if (val && val.trim() != '') {
+      this.listTemas = this.listTemas.filter((item) => {
+        return (item.titulo.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 
 }

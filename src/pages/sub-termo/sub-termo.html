@@ -16,16 +16,19 @@
   
   
   <ion-content>
-      <!-- <div *ngIf="selectedItem" padding>
-        <b>{{pathPrevious}}</b>
-      </div> -->
-      <ion-list padding>
-        <button ion-item *ngFor="let termo of listTermos" (click)="itemTapped($event, termo)" class="item-md">
-          {{termo.titulo}}
-          <ion-avatar item-start>
-            <img src="assets/imgs/icon.png">
-          </ion-avatar>
-          <ion-icon md="md-arrow-forward" item-end></ion-icon>
-        </button>
-      </ion-list>
+    <!-- <div *ngIf="selectedItem" padding>
+      <b>{{pathPrevious}}</b>
+    </div> -->
+    <ion-list padding>
+      <ion-card>
+        <ion-card-content *ngFor="let subtermo of listSubTermos">
+          <ion-card-title >
+              {{subtermo.titulo}}
+          </ion-card-title>
+          <p>
+            {{subtermo.descricao}}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
   </ion-content>
