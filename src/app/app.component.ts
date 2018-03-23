@@ -3,7 +3,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ListProfissoesPage } from '../pages/list-profissoes/list-profissoes';
-import { timer } from 'rxjs/observable/timer';
+// import { timer } from 'rxjs/observable/timer';
 
 @Component({
   templateUrl: 'app.html'

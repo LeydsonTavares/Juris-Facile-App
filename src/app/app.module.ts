@@ -6,20 +6,29 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { ListProfissoesPage } from '../pages/list-profissoes/list-profissoes';
+import { ListTemasPage } from './../pages/list-temas/list-temas';
+import { ListTermosPage } from './../pages/list-termos/list-termos';
+import { SubTermoPage } from './../pages/sub-termo/sub-termo';
 
 @NgModule({
   declarations: [
     MyApp,
-    ListProfissoesPage
+    ListProfissoesPage,
+    ListTemasPage,
+    ListTermosPage,
+    SubTermoPage
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ListProfissoesPage
+    ListProfissoesPage,
+    ListTemasPage,
+    ListTermosPage,
+    SubTermoPage
   ],
   providers: [
     StatusBar,
