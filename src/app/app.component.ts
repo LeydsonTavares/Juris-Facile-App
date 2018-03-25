@@ -1,30 +1,26 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { ListProfissoesPage } from '../pages/list-profissoes/list-profissoes';
-// import { timer } from 'rxjs/observable/timer';
+import { timer } from 'rxjs/observable/timer';
+
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage: any = ListProfissoesPage;
-  // showSplash = true; // <- mostrar animação
+  rootPage: any = 'ListProfissoesPage';  
+  splash = true;
 
-
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar) {
     this.initializeApp();
   }
   
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
+     
+        timer(3000).subscribe(() => this.splash = false)
       
-      // timer(4000).subscribe(() => this.showSplash = false)
-
     });
   }
 

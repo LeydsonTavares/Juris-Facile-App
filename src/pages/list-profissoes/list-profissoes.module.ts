@@ -3,11 +3,9 @@ import { IonicPageModule } from 'ionic-angular';
 import { ListProfissoesPage } from './list-profissoes';
 
 @NgModule({
-  declarations: [
-    ListProfissoesPage,
-  ],
-  imports: [
-    IonicPageModule.forChild(ListProfissoesPage),
-  ],
+  declarations: [ListProfissoesPage],
+  imports: [IonicPageModule.forChild(ListProfissoesPage)],
+  exports: [ListProfissoesPage]
+  
 })
-export class ListProfissoesPageModule {}
+export class ListProfissoesPageModule { }

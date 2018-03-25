@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
 import { Profissao } from './../../model/profissao';
 import { Tema } from './../../model/tema';
 import { Termo } from './../../model/termo';
 import { SubTermo } from './../../model/subTermo';
-import { ListTemasPage } from './../list-temas/list-temas';
+
 
 @IonicPage()
 @Component({
@@ -19,12 +18,10 @@ export class ListProfissoesPage {
   listTemas:Tema[];
   listTermos:Termo[];
   listSubTermos:SubTermo[];
+  
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private statusBar: StatusBar) {
 
-    this.statusBar.overlaysWebView(true);
-    // set status bar to white
-    this.statusBar.styleBlackOpaque();
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
     this.initializeItems();
   }
@@ -69,9 +66,13 @@ export class ListProfissoesPage {
 
   }
 
+
+
+
+
   itemTapped(event, profissao) {
 
-    this.navCtrl.push(ListTemasPage, {
+    this.navCtrl.push('ListTemasPage', {
       profissao: profissao
     });
   }

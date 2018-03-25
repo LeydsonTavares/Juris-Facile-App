@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Termo } from './../../model/termo';
-import { SubTermoPage } from './../sub-termo/sub-termo';
-
 
 
 @IonicPage()
@@ -28,7 +26,7 @@ export class ListTermosPage {
 
   itemTapped(event, termo) {
 
-    this.navCtrl.push(SubTermoPage, {
+    this.navCtrl.push('SubTermoPage', {
       termo: termo
     });
   }

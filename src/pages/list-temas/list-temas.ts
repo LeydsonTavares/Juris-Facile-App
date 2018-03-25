@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Tema } from './../../model/tema';
-import { ListTermosPage } from './../list-termos/list-termos';
+
 
 @IonicPage()
 @Component({
@@ -27,7 +27,7 @@ export class ListTemasPage {
 
   itemTapped(event, tema) {
 
-    this.navCtrl.push(ListTermosPage, {
+    this.navCtrl.push('ListTermosPage', {
       tema: tema
     });
   }
