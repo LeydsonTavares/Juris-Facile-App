@@ -20,11 +20,11 @@
         <b>{{pathPrevious}}</b>
       </div> -->
 
-      <div text-center *ngIf="listTermos.length">
-        <ion-list padding>
-          <button ion-item *ngFor="let termo of listTermos" (click)="itemTapped($event, termo)" class="item-md">
+    <div text-center *ngIf="listTermos.length">
+      <ion-list padding>
+        <button ion-item *ngFor="let termo of listTermos" (click)="itemTapped($event, termo)" class="item-md">
             {{termo.titulo}}
-            <ion-avatar item-start>
+          <ion-avatar item-start>
               <img src="assets/imgs/icon.png">
           </ion-avatar>
           <ion-icon md="md-arrow-forward" item-end></ion-icon>
