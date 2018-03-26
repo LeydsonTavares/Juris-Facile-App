@@ -19,16 +19,23 @@
     <!-- <div *ngIf="selectedItem" padding>
       <b>{{pathPrevious}}</b>
     </div> -->
-    <ion-list padding>
-      <ion-card>
-        <ion-card-content *ngFor="let subtermo of listSubTermos">
-          <ion-card-title >
+    <div text-center *ngIf="listSubTermos.length">
+      <ion-list padding>
+        <ion-card>
+          <ion-card-content *ngFor="let subtermo of listSubTermos">
+            <ion-card-title >
               {{subtermo.titulo}}
-          </ion-card-title>
-          <p>
-            {{subtermo.descricao}}
-          </p>
-        </ion-card-content>
-      </ion-card>
-    </ion-list>
+            </ion-card-title>
+            <p>
+              {{subtermo.descricao}}
+            </p>
+          </ion-card-content>
+        </ion-card>
+     </ion-list>
+    </div>
+
+    <div text-center *ngIf="!listSubTermos.length">
+        <h5 ion-text color="light">Nenhum termo encontrado!</h5>   
+    </div>
+    
   </ion-content>

@@ -19,13 +19,20 @@
     <!-- <div *ngIf="selectedItem" padding>
       <b>{{pathPrevious}}</b>
     </div> -->
-    <ion-list padding>
-      <button ion-item *ngFor="let tema of listTemas" (click)="itemTapped($event, tema)" class="item-md">
-        {{tema.titulo}}
-        <ion-avatar item-start>
-          <img src="assets/imgs/icon.png">
-        </ion-avatar>
-        <ion-icon md="md-arrow-forward" item-end></ion-icon>
-      </button>
-    </ion-list>
+    <div *ngIf="listTemas.length">
+      <ion-list padding>
+        <button ion-item *ngFor="let tema of listTemas" (click)="itemTapped($event, tema)" class="item-md">
+          {{tema.titulo}}
+          <ion-avatar item-start>
+            <img src="assets/imgs/icon.png">
+          </ion-avatar>
+          <ion-icon md="md-arrow-forward" item-end></ion-icon>
+        </button>
+      </ion-list>
+    </div>
+
+    <div text-center *ngIf="!listTemas.length">
+        <h5 ion-text color="light">Nenhum tema encontrado!</h5>   
+    </div>
+
 </ion-content>

@@ -18,12 +18,11 @@ export class ListProfissoesPage {
   listTemas:Tema[];
   listTermos:Termo[];
   listSubTermos:SubTermo[];
-  
-
+  showElements: boolean = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
     this.initializeItems();
+    this.showElements = this.listProfissoes.length > 0 ? true : false;
   }
 
   initializeItems() {
@@ -61,9 +60,6 @@ export class ListProfissoesPage {
         new Profissao(8, 'Administração',this.listTemas),
         new Profissao(9, 'Arquitetura',this.listTemas),
         new Profissao(10, 'Jogos Digitais',this.listTemas)];
-
-
-
   }
 
 

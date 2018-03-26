@@ -15,14 +15,20 @@
 
 
 <ion-content>
-  <ion-list padding>
-    <button ion-item *ngFor="let profissao of listProfissoes" (click)="itemTapped($event, profissao)" class="item-md">
-      {{profissao.titulo}}
-      <ion-avatar item-start>
-        <img src="assets/imgs/icon.png">
-      </ion-avatar>
-      <ion-icon md="md-arrow-forward" item-end></ion-icon>
-    </button>
-  </ion-list>
 
+  <ion-list padding>
+    <div *ngIf="listProfissoes.length">
+      <button ion-item *ngFor="let profissao of listProfissoes" (click)="itemTapped($event, profissao)" class="item-md">
+        {{profissao.titulo}} 
+        <ion-avatar item-start>
+          <img src="assets/imgs/icon.png">
+        </ion-avatar>
+        <ion-icon md="md-arrow-forward" item-end></ion-icon>
+      </button>
+    </div>
+  </ion-list>
+  
+  <div text-center *ngIf="!listProfissoes.length">
+    <h5 ion-text color="light">Nenhuma profissão encontrada!</h5>   
+  </div>
 </ion-content>
