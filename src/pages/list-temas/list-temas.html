@@ -24,7 +24,7 @@
         <button ion-item *ngFor="let tema of listTemas" (click)="itemTapped($event, tema)" class="item-md">
           {{tema.titulo}}
           <ion-avatar item-start>
-            <img src="assets/imgs/icon.png">
+            <img src="{{selectedItem.url}}">
           </ion-avatar>
           <ion-icon md="md-arrow-forward" item-end></ion-icon>
         </button>

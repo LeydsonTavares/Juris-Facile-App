@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Termo } from './../../model/termo';
+import { ListTermos } from '../../model/mock';
 
 
 @IonicPage()
@@ -11,7 +12,7 @@ import { Termo } from './../../model/termo';
 export class ListTermosPage {
 
   selectedItem: any;
-  listTermos: Termo[];
+  listTermos: Termo[] = [];
   pathPrevious: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -20,7 +21,7 @@ export class ListTermosPage {
   }
 
   initializeItems(){
-    this.listTermos = this.selectedItem.listTermos;
+    this.listTermos = ListTermos;
     this.pathPrevious = this.selectedItem.titulo;
   }
 

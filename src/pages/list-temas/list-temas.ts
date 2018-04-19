@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Tema } from './../../model/tema';
+import { Profissao } from '../../model/profissao';
 
 
 @IonicPage()
@@ -10,7 +11,7 @@ import { Tema } from './../../model/tema';
 })
 export class ListTemasPage {
 
-  selectedItem: any;
+  selectedItem: Profissao;
   listTemas: Tema[];
   pathPrevious: string;
 
@@ -20,9 +21,8 @@ export class ListTemasPage {
   }
 
   initializeItems(){
-    this.listTemas = this.selectedItem.listTemas;
+    this.listTemas = this.selectedItem.temas;
     this.pathPrevious = this.selectedItem.titulo;
-
   }
 
   itemTapped(event, tema) {
@@ -33,7 +33,7 @@ export class ListTemasPage {
   }
 
   getItems(ev: any) {
-    this.initializeItems();
+    this.listTemas = this.selectedItem.temas;
     let val = ev.target.value;
     if (val && val.trim() != '') {
       this.listTemas = this.listTemas.filter((item) => {

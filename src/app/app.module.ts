@@ -4,19 +4,29 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { AuthProvider } from '../providers/auth/auth';
+import { StorageProvider } from '../providers/storage/storage';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfissoesProvider } from '../providers/profissoes/profissoes';
+import { AuthInterceptorProvider } from '../interceptors/auth.interceptor';
 
 
 @NgModule({
   declarations: [MyApp],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp],
   providers: [
+    AuthProvider,
+    AuthInterceptorProvider,
+    StorageProvider,
     StatusBar,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ProfissoesProvider,
   ]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SubTermo } from './../../model/subTermo';
+import { Tema } from '../../model/tema';
+import { ListSubTermos } from '../../model/mock';
 
 @IonicPage()
 @Component({
@@ -9,8 +11,8 @@ import { SubTermo } from './../../model/subTermo';
 })
 export class SubTermoPage {
 
-  selectedItem: any;
-  listSubTermos: SubTermo[];
+  selectedItem: Tema;
+  listSubTermos: SubTermo[] = [];
   pathPrevious: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -20,8 +22,9 @@ export class SubTermoPage {
   }
 
   initializeItems(){
-    this.listSubTermos = this.selectedItem.listSubTermos;
+    //this.listSubTermos = this.selectedItem.listSubTermos;
     this.pathPrevious = this.selectedItem.titulo;
+    this.listSubTermos = ListSubTermos;
   }
   getItems(ev: any) {
     this.initializeItems();

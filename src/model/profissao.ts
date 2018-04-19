@@ -6,6 +6,7 @@ export class Profissao {
   constructor(
     public id: number,
     public titulo: string,
-    public listTemas: Tema[]) {
+    public url: string,
+    public temas: Tema[]) {
   }
 }

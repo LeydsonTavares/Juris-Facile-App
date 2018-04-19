@@ -1,21 +1,5 @@
-import { Tema } from './tema';
-import { Profissao } from './profissao';
 import { Termo } from './termo';
 import { SubTermo } from './subTermo';
-
-export var ListProfissoes = [
-    new Profissao(0, 'Sistemas de Informação', ListTemas),
-    new Profissao(1, 'Chapinha Profissional', ListTemas),
-    new Profissao(3, 'Pipoqueira Elétrica', ListTemas),
-    new Profissao(4, 'Samsung Galaxy On 7', ListTemas),
-    new Profissao(5, 'Chapinha Profissional', ListTemas)];
-
-export var ListTemas = [
-    new Tema(0, 'Tema 1', ListTermos),
-    new Tema(1, 'Tema 2', ListTermos),
-    new Tema(3, 'Tema 3', ListTermos),
-    new Tema(4, 'Tema 4', ListTermos),
-    new Tema(5, 'Tema 5', ListTermos)];
 
 export var ListTermos = [
     new Termo(0, 'Termo 1', ListSubTermos),

@@ -21,7 +21,7 @@
       <button ion-item *ngFor="let profissao of listProfissoes" (click)="itemTapped($event, profissao)" class="item-md">
         {{profissao.titulo}} 
         <ion-avatar item-start>
-          <img src="assets/imgs/icon.png">
+          <img src="{{profissao.url}}">
         </ion-avatar>
         <ion-icon md="md-arrow-forward" item-end></ion-icon>
       </button>
