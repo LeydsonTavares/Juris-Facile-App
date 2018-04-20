@@ -5,7 +5,7 @@
           <ion-searchbar autocomplete="on" animated="true" autocorrect="on" placeholder="Pesquisar..." (ionInput)="getItems($event)">
           </ion-searchbar>
           <ion-buttons end>
-            <button ion-button icon-only>
+            <button ion-button icon-only (click)="aboutClick($event)">
               <ion-icon name="more"></ion-icon>
             </button>
           </ion-buttons>
@@ -19,19 +19,21 @@
       <!-- <div *ngIf="selectedItem" padding>
         <b>{{pathPrevious}}</b>
       </div> -->
-
     <div text-center *ngIf="listTermos.length">
       <ion-list padding>
-        <button ion-item *ngFor="let termo of listTermos" (click)="itemTapped($event, termo)" class="item-md">
-            {{termo.titulo}}
-          <ion-avatar item-start>
-              <img src="assets/imgs/icon.png">
-          </ion-avatar>
-          <ion-icon md="md-arrow-forward" item-end></ion-icon>
-        </button>
-      </ion-list>
+        <ion-card>
+          <ion-card-content *ngFor="let termo of listTermos">
+            <ion-card-title >
+              {{termo.titulo}}
+            </ion-card-title>
+            <p>
+              {{termo.descricao}}
+            </p>
+          </ion-card-content>
+        </ion-card>
+     </ion-list>
     </div>
-      
+
     <div text-center *ngIf="!listTermos.length">
         <h5 ion-text color="light">Nenhum termo encontrado!</h5>   
     </div>

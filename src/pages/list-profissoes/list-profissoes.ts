@@ -60,10 +60,15 @@ export class ListProfissoesPage {
     }
   }
 
-
-
-
+  aboutClick(event) {
+    this.navCtrl.push('SobrePage')
+  };
 }
+
+
+
+
+
 
 
 

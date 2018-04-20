@@ -41,5 +41,8 @@ export class ListTemasPage {
       })
     }
   }
+  aboutClick(event) {
+    this.navCtrl.push('SobrePage')
+  };
 
 }

@@ -34,7 +34,7 @@ export class MyApp {
       },
         error => {
           let alert = this.alertCtrl.create({
-            title: 'Que pena!',
+            title: 'Ops!',
             message: 'A comunicação com o servidor falhou, verifique sua conexão e tente novamente',
             enableBackdropDismiss: false,
             buttons: [

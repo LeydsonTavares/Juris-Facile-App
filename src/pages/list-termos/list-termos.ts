@@ -25,13 +25,6 @@ export class ListTermosPage {
     this.pathPrevious = this.selectedItem.titulo;
   }
 
-  itemTapped(event, termo) {
-
-    this.navCtrl.push('SubTermoPage', {
-      termo: termo
-    });
-  }
-
   getItems(ev: any) {
     this.initializeItems();
     let val = ev.target.value;
@@ -41,5 +34,8 @@ export class ListTermosPage {
       })
     }
   }
+  aboutClick(event) {
+    this.navCtrl.push('SobrePage')
+  };
 
 }

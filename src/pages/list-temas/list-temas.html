@@ -5,7 +5,7 @@
         <ion-searchbar autocomplete="on" animated="true" autocorrect="on" placeholder="Pesquisar..." (ionInput)="getItems($event)">
         </ion-searchbar>
         <ion-buttons end>
-          <button ion-button icon-only>
+          <button ion-button icon-only (click)="aboutClick($event)">
             <ion-icon name="more"></ion-icon>
           </button>
         </ion-buttons>

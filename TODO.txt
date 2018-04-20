@@ -1,4 +1,12 @@
+
+run e build
 https://ionicframework.com/docs/cli/cordova/run/
 
+animation
+http://bouncejs.com 
 
+preloader
+https://www.schoolofnet.com/forum/topico/lentidao-na-abertura-de-aplicativo-ionic-2-122
 
+popovers
+https://github.com/ionic-team/ionic-preview-app/blob/master/src/pages/popovers/basic/pages.ts
