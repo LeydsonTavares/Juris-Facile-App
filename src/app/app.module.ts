@@ -1,3 +1,5 @@
+import { TermoProvider } from './../providers/termos/termos';
+import { DisciplinasProvider } from './../providers/disciplinas/disciplinas';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -27,6 +29,8 @@ import { AuthInterceptorProvider } from '../interceptors/auth.interceptor';
     StatusBar,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProfissoesProvider,
+    TermoProvider,
+    DisciplinasProvider
   ]
 })
 export class AppModule { }

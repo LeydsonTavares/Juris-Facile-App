@@ -1,7 +1,8 @@
+import { DisciplinasProvider } from './../../providers/disciplinas/disciplinas';
+import { Disciplina } from './../../model/disciplina';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import { Tema } from './../../model/tema';
-import { Profissao } from '../../model/profissao';
 
 
 @IonicPage()
@@ -11,18 +12,42 @@ import { Profissao } from '../../model/profissao';
 })
 export class ListTemasPage {
 
-  selectedItem: Profissao;
-  listTemas: Tema[];
+  selectedItem: Disciplina;
+  listTemas: Tema[] = [];
   pathPrevious: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.selectedItem = navParams.get('profissao');
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public disciplinasProvider: DisciplinasProvider,
+    public alertCtrl: AlertController) {
+    this.selectedItem = navParams.get('disciplina');
     this.initializeItems();
   }
 
-  initializeItems(){
-    this.listTemas = this.selectedItem.temas;
-    this.pathPrevious = this.selectedItem.titulo;
+  initializeItems() {
+    this.findFullDisciplina();
+  }
+
+  findFullDisciplina() {
+    this.disciplinasProvider.findById(this.selectedItem.id)
+      .subscribe(response => {
+        this.selectedItem = response;
+        this.listTemas = this.selectedItem.temas;
+        this.pathPrevious = this.selectedItem.titulo;
+      },
+      error => {
+        let alert = this.alertCtrl.create({
+          title: 'Que pena!',
+          message: 'A comunicação com o servidor falhou, verifique sua conexão e tente novamente',
+          enableBackdropDismiss: false,
+          buttons: [
+            {
+              text: 'Ok :(',
+            }
+          ]
+        });
+        alert.present();
+      });
   }
 
   itemTapped(event, tema) {

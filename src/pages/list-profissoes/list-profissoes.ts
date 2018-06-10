@@ -43,7 +43,7 @@ export class ListProfissoesPage {
   }
 
   itemTapped(event, profissao) {
-    this.navCtrl.push('ListTemasPage', {
+    this.navCtrl.push('ListDisciplinasPage', {
       profissao: profissao
     });
   }

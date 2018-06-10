@@ -1,5 +1,5 @@
 
-import { Tema } from './tema';
+import { Disciplina } from './disciplina';
 
 export class Profissao {
 
@@ -7,6 +7,6 @@ export class Profissao {
     public id: number,
     public titulo: string,
     public url: string,
-    public temas: Tema[]) {
+    public disciplinas: Disciplina[]) {
   }
 }
