@@ -1,5 +1,4 @@
 import { Termo } from './../../model/termo';
-import { Disciplina } from './../../model/disciplina';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';

@@ -2,11 +2,11 @@
   <ion-toolbar color="dark">
     <ion-segment>
       <img src="assets/imgs/icon.png" width="40px" height="40px"/>
-      <ion-searchbar autocomplete="on" animated="true" autocorrect="on" placeholder="Pesquisar..." (ionInput)="getItems($event)">
+      <ion-searchbar style="width: 95%" autocomplete="on" animated="true" autocorrect="on" placeholder="Pesquisar..." (ionInput)="getItems($event)">
       </ion-searchbar>
       <ion-buttons end>
         <button ion-button icon-only (click)="aboutClick($event)">
-          <ion-icon name="more"></ion-icon>
+          <ion-icon name="people"></ion-icon>
         </button>
       </ion-buttons>
     </ion-segment>
@@ -29,6 +29,6 @@
   </ion-list>
   
   <div text-center *ngIf="!listProfissoes.length">
-    <h5 ion-text color="light">Nenhum curso encontrada!</h5>   
+    <h5 ion-text color="light">Nenhum curso encontrado!</h5>   
   </div>
 </ion-content>
