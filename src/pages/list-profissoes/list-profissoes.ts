@@ -20,6 +20,8 @@ export class ListProfissoesPage {
   }
 
   findAllProfissoes() {
+    console.log("opa");
+    
     this.profissoesProvider.findAll()
       .subscribe(response => {
         this.listProfissoes = response;
